@@ -8,5 +8,68 @@
         <p>Because in those series of movies, they mention how to keep yourself busy in daily life. And majorly NEVER GIVE UP attitude.</p>
         <p>They specifically mention a quote <b>Hard work with efforts never goes in vain</b> which is the key.</p>
         <img src="C:\Users\S546551\Desktop\webapps-repos\webapps-s22-assignment-3-MaheshMickey\Avengers-InfinityWar.jpg" height="300" width="500" alt="Avengers Image">
+        <hr>
+        <table>
+            <tr>
+                <th>Sport</th>
+                <th>Country</th>
+                <th>Money</th>
+            </tr>
+            <tr>
+                <td>Cricket</td>
+                <td>INDIA</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>Badminton</td>
+                <td>JAPAN</td>
+                <td>$200</td>
+            </tr>
+            <tr>
+                <td>Hockey</td>
+                <td>INDIA</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>BasketBall</td>
+                <td>USA</td>
+                <td>$200</td>
+            </tr>
+        </table>
+        <hr>
+        <h3>Code Display</h3>
+        <blockquote cite="https://www.geeksforgeeks.org/maximum-number-of-edges-in-bipartite-graph/">Link to Source</blockquote>
+        <pre>int n, k;
+            vector<vector<int>> g;
+            vector<int> mt;
+            vector<bool> used;
+            
+            bool try_kuhn(int v) {
+                if (used[v])
+                    return false;
+                used[v] = true;
+                for (int to : g[v]) {
+                    if (mt[to] == -1 || try_kuhn(mt[to])) {
+                        mt[to] = v;
+                        return true;
+                    }
+                }
+                return false;
+            }
+            
+            int main() {
+                //... reading the graph ...
+            
+                mt.assign(k, -1);
+                for (int v = 0; v < n; ++v) {
+                    used.assign(n, false);
+                    try_kuhn(v);
+                }
+            
+                for (int i = 0; i < k; ++i)
+                    if (mt[i] != -1)
+                        printf("%d %d\n", mt[i] + 1, i + 1);
+            }</pre>
+            
     </body>
 </html>
